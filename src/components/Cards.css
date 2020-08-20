@@ -1,0 +1,50 @@
+.cards__row__div{
+
+}
+.cards__container__div{
+  margin-top: 40px;
+  padding: 0 0 0 0;
+}
+.gallery {
+  padding: 0;
+    width: 72rem;
+    overflow: hidden;
+}
+.gallery ul {
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* transition: transform 0.5s; */
+  font-size: 0;
+}
+.gallery li {
+    display: inline-block;
+}
+ul.wrapper {
+  transition: none;
+}
+.scroll-button{
+  outline: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 0;
+  opacity: 90%;
+  background-color: #7fffd400;
+}
+.scroll-button:hover{
+  outline: 0;
+  opacity: 100%
+}
+.scroll-button:focus{
+  outline: 0;
+  border: 0;
+  opacity: 100%
+}
+.scroll-button.left{
+  left: 0
+}
+.scroll-button.right{
+  right: 0;
+}

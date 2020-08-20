@@ -1,0 +1,41 @@
+.carousel__div{
+  padding: 0px;
+}
+
+ /* .carousel-item.active{
+  opacity: 100%;
+  transition: opacity 2s;
+}
+.carousel-item{
+  opacity:0;
+} */
+/* #wrapper {
+  opacity: 0;
+}
+
+#wrapper.is-nav-open {
+  opacity: 100%;
+  transition: opacity 2s;
+}
+.wraper.is-nav-close {
+  opacity: 0%;
+  transition: opacity 2s;
+} */
+.remove-btn {
+  margin-right: 0.5rem;
+}
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

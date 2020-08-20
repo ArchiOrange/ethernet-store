@@ -1,0 +1,31 @@
+.preview{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.row__div{
+  margin-right: 0;
+}
+.img-product{
+  margin-bottom: 10px;
+}
+.ditail{
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.ditail-item{
+  padding-right: 5px;
+  background-color: #fff;
+  margin-bottom: 0px;
+}
+.specification{
+  padding: 0;
+}
+.article{
+  margin-top: 20px;
+  border-radius: 10px;
+  padding-right: 0;
+}

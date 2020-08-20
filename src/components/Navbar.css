@@ -1,0 +1,17 @@
+.navbar__nav{
+  background-color: #393e46;
+
+}
+a{
+    color: #fff;
+}
+a:hover{
+  color: #eeeeee;
+}
+.button__blue:hover{
+  background-color: #32e0c4;
+}
+.button__blue{
+  border-color: #32e0c4;
+  color: #32e0c4;
+}

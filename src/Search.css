@@ -1,0 +1,20 @@
+.search{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 0 15px 0;
+}
+.checkboxs{
+  margin-top: 25px;
+  padding: 0 15px 0 15px;
+}
+label.header font font{
+  font-weight: 600;
+  font-size: 120%
+}
+.result{
+  border-radius: 10px;
+  padding-left: 5px;
+}
+.result .card{
+  border-radius: 10px;
+}
