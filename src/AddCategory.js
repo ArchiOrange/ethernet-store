@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-
+const categoryNull = {
+    name: '',
+    specifications: []
+}
 class AddCategory extends Component {
   constructor(props) {
     super(props)
     this.state = {
       category: {
-        name: null,
+        name: '',
         specifications: []
       },
     }
@@ -14,7 +17,6 @@ class AddCategory extends Component {
   changeCategory = (specification) => {
 
     let category = this.state.category
-    console.log(specification.i);
     category.specifications[specification.i][specification.name] = specification.value
 
     this.setState({category: category})
@@ -23,7 +25,7 @@ class AddCategory extends Component {
 
   addSpecification = () => {
     let category = this.state.category;
-    category.specifications.push({demension: '', name: ''});
+    category.specifications.push({demension: '', name: '',value: ''});
     this.setState({category: category})
   }
   submitForm = (event) => {
@@ -36,10 +38,16 @@ class AddCategory extends Component {
     },
         body: JSON.stringify(this.state.category)
       });
-      let result = await res.json();
-      console.log(result);
+      let result = await res.status;
+      if(result===200){
+        alert("Категория добавлена")
+        this.setState({category:categoryNull})
+      }
 
     })()
+    let category = this.state.category
+    category.name = ''
+    this.setState({category: category})
     event.preventDefault();
   }
   nameChange = (event) => {
@@ -62,7 +70,7 @@ class AddCategory extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text">Название категории</span>
               </div>
-              <input type="text" aria-label="First name" id="name" onChange={this.nameChange} className="form-control"/>
+              <input type="text" aria-label="First name" id="name"  value={this.state.category.name} onChange={this.nameChange} className="form-control"/>
             </div>
           </div>
           <h1>Характеристики</h1>
@@ -83,7 +91,6 @@ class Specification extends Component {
       value: event.target.value,
       i: event.target.dataset.keyid
     }
-    // console.log(this.props);
     this.props.changeCategory(specification)
 
   }
