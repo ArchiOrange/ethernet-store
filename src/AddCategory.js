@@ -38,8 +38,9 @@ class AddCategory extends Component {
     },
         body: JSON.stringify(this.state.category)
       });
-      let result = await res.status;
-      if(result===200){
+      let result = await res.json();
+      if(res.status===200){
+
         alert("Категория добавлена")
         this.setState({category:categoryNull})
       }
@@ -100,6 +101,11 @@ class Specification extends Component {
         <div className="input-group mt-3 mb-3">
           <input type="text" id='name'   data-keyid={this.props.keyid} onChange={this.changeInput} placeholder="Имя" className="form-control"/>
           <input type="text" id="demension"  data-keyid={this.props.keyid} onChange={this.changeInput} placeholder="Размерность" className="form-control"/>
+              <select onChange={this.changeInput} id='type' required={true} data-keyid={this.props.keyid} className="form-control">
+                <option defaultValue=''>Выберите тип характеристики</option>
+                <option  value='array'>Массив</option>
+                <option  value='range'>Диапазон</option>
+              </select>
         </div>
       </div>
     )

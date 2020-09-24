@@ -1,5 +1,15 @@
+'use stracte'
 import React, {Component} from 'react';
-import "./all.css"
+import "./all.css";
+let  a = {
+    price: '',
+    availability: null,
+    name: '',
+    img:[],
+    category: '',
+    specifications:[],
+    discription: ''
+  }
 class AddProduct extends Component{
   constructor(props){
     super(props)
@@ -85,17 +95,30 @@ class AddProduct extends Component{
       for (var i = 0; i < this.state.img.length; i++) {
         formData.append('filedata', this.state.img[i])
       }
-      console.log(formData.entries());
 
         let res = await fetch('http://localhost:3001/addproduct',{
         method: 'POST',
         body: formData
       });
       let result = await res.json();
-      console.log(result);
-      event.preventDefault();
+      if (result.err === null ) {
+        alert("Продукт успешно добавлен")
+        this.setState({product: {
+            price: '',
+            availability: null,
+            name: '',
+            img:[],
+            category: '',
+            specifications:[],
+            discription: ''
+          }})
+        this.setState({img: []})
+        this.setState({category: []})
+      }else{
+        alert("Ошибка!")
+        console.log(result.err);
+      }
     })()
-    // console.log(formData);
     event.preventDefault();
   }
   addSpecifications = (categorySpecifications) =>{
@@ -150,7 +173,7 @@ class  Category extends Component {
     })
     return(
       <div className={this.state.category.length === 0 ? "prefetch col-9" : "col-9"}>
-        <select onChange={this.handleChange} style={this.state.category.length===0 ?  {"display": "none"} : null} required={true} id={this.props.id} className="custom-select custom-select-lg mt-3 mb-3">
+        <select  value={this.state.category} onChange={this.handleChange} style={this.state.category.length===0 ?  {"display": "none"} : null} required={true} id={this.props.id} className="custom-select custom-select-lg mt-3 mb-3">
           <option defaultValue='selected' value='0'>Выберите категорию</option>
           {option}
         </select>
